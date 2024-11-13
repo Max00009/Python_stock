@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Info</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <h1>Stock Information</h1>
+    {% if stock_data %}
+        <ul>
+            <li><strong>Price:</strong> {{ stock_data['price'] }}</li>
+            <li><strong>Change:</strong> {{ stock_data['change'] }}</li>
+        </ul>
+    {% endif %}
+</body>
+</html>
