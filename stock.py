@@ -20,6 +20,8 @@ def display_data(data,stock_symbol):
     if 'Global Quote' in data and '05. price' in data['Global Quote'] :
        price=data['Global Quote']['05. price']
        change=data['Global Quote'].get('10. change percent','N/A')
+       if not change.startswith('-') and change !='N/A':
+             change=f"+{change}"
        return {
              'symbol':stock_symbol,
              'price':price,
